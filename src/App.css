@@ -8,3 +8,23 @@
     margin: 0;
     padding: 0.5rem;
 }
+
+.navbar {
+	text-align: center;
+	width:800px; margin:0 auto;
+ }
+
+.navbar-header {
+	background-color: white;
+	color: white;
+	font-size: .60rem;
+	margin: 2px	;
+	padding: 0.5rem;
+	position: absolute;
+	width: 200px;
+	height: 10px;
+	z-index: 15;
+	top: 158px;
+	left: 60%;
+	margin: -100px 0 0 -150px;
+}

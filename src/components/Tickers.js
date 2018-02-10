@@ -4,8 +4,16 @@ import './Tickers.css';
 import Cryptocurrency from './Cryptocurrency';
 	
 
+function getData(item) {   
+     return axios.get(`https://api.coinmarketcap.com/v1/ticker/${item}/`)
+     .then(response => response && response.data[0])
+     .catch(function (response) {
+        console.log(response);
+     })
 
-class Tickers extends Component {
+}
+
+class Favorites extends Component {
 
     constructor(props) {
         super(props);
@@ -45,11 +53,28 @@ class Tickers extends Component {
      fetchCryptocurrencyData() {
         axios.get("https://api.coinmarketcap.com/v1/ticker/?limit=15")
             .then(response => {
-                var wanted = ["bitcoin", "ethereum", "ripple"];
-                var result = response.data; //.filter(currency => wanted.includes(currency.id));
+                var wanted = ["bitcoin", "ethereum", "ripple", "sumokoin", "pivx", "sonm", "nuls", "cardano"];
+                var result = response.data.filter(currency => wanted.includes(currency.id));
                 this.setState({ data: result});
             })
             .catch(err => console.log(err));
+    }
+
+    // getData()
+
+    fetchAllFavoritesData() {
+        var wanted = ["bitcoin", "ethereum", "ripple", "sumokoin", "pivx", "sonm", "nuls", "cardano"];
+        let dataState = {};
+        wanted.map(item => {
+            let promised_data = getData(item);
+            let data;
+            promised_data.then(response => { 
+                dataState = Object.assign(dataState, response);
+                console.log("resolved ", response);})
+                        .catch(function (response) {console.log("error resolving");})
+            
+        });
+        console.log("returned", dataState);
     }
     
     componentDidMount() {
@@ -84,4 +109,4 @@ class Tickers extends Component {
     }
 }
 
-export default Tickers;
+export default Favorites;

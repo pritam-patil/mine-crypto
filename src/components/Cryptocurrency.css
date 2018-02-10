@@ -9,27 +9,49 @@
     color: rgba(0, 0, 0, 0.75);
 }
 .cryptocurrency-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 .bitcoin {
     background-color: #fbe2c3;
     border-bottom: solid 4px #f7931a;
 }
 .ethereum {
-    background-color: #c2c9ff;
-    border-bottom: solid 4px #454a75;
-}
-.ripple {
     background-color: #ececec;
     border-bottom: solid 4px #bebebe;
 }
+.ripple {
+     background-color: #c2c9ff;
+    border-bottom: solid 4px #454a75;
+}
+
+.nuls {
+    background-color: #ffffff;
+    border-bottom: solid 4px #252525;
+}
+
+.sumokoin {
+    background-color: #ececec;
+    border-bottom: solid 4px #bebebe;
+}
+
+
+.pivx {
+    background-color: #fbe2c3;
+    border-bottom: solid 4px #f7931a;
+}
+
 .bitcoin-cash {
     background-color: #ececec;
     border-bottom: solid 4px #bebebe;
 }
+
+.sonm {
+    background-color: #c2c9ff;
+    border-bottom: solid 4px #454a75;
+}
 .cardano {
-    background-color: #fbe2c3;
-    border-bottom: solid 4px #f7931a;
+    background-color: #c2c9ff;
+    border-bottom: solid 4px #454a75;
 }
 .litecoin {
     background-color: #c2c9ff;
@@ -44,8 +66,8 @@
     border-bottom: solid 4px #bebebe;
 }
 .stellar {
-    background-color: #fbe2c3;
-    border-bottom: solid 4px #f7931a;
+    background-color: #fbe2d1;
+    border-bottom: solid 4px #f2231a;
 }
 
 .eos {
