@@ -24,7 +24,8 @@
 	width: 200px;
 	height: 10px;
 	z-index: 15;
-	top: 158px;
-	left: 60%;
+	top: 140px;
+	left: 54%;
 	margin: -100px 0 0 -150px;
+	border: solid 2px green;
 }
