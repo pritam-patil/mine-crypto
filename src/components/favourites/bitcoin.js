@@ -12,10 +12,10 @@ class Bitcoin extends Component {
                 id: "bitcoin",
                 name: "Bitcoin",
                 symbol: "BTC",
-                price_usd: "1",
-                percent_change_1h: "0",
-                percent_change_24h: "0",
-                percent_change_7d: "0",
+                price_usd: 1,
+                percent_change_1h: 0,
+                percent_change_24h: 0,
+                percent_change_7d: 0,
             }
         ]
         };
@@ -33,7 +33,7 @@ class Bitcoin extends Component {
     
     componentWillMount() {
         this.fetchCryptocurrencyData();
-        this.interval = setInterval(() => this.fetchCryptocurrencyData(), 1000 * 1000);
+        // this.interval = setInterval(() => this.fetchCryptocurrencyData(), 1000 * 1000);
     };
 
     render() {

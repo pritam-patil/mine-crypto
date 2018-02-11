@@ -12,9 +12,9 @@ import {
 } from 'react-router-dom';	
 
 const Header = () => (
-  <header className="navbar">
+  <header className="container">
     <nav>
-      <table className="navbar-header">
+      <table className="center">
       <tbody>
         <tr>
         	<td><Link to='/favourite'>Favourites</Link></td>

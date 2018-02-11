@@ -5,7 +5,7 @@ import './Tickers.css';
 import Cryptocurrency from './Cryptocurrency';
 	
 
-class Favorites extends Component {
+class NewCryptos extends Component {
 
     constructor(props) {
         super(props);
@@ -49,10 +49,9 @@ class Favorites extends Component {
                     <ul className="tickers">{tickers[7]}</ul>
                     <ul className="tickers">{tickers[8]}</ul>
                 </div>
-                <p>Information updated every 10 seconds courtesy of coinmarketcap.com</p>
            </div>
         );
     }
 }
 
-export default Favorites;
+export default NewCryptos;

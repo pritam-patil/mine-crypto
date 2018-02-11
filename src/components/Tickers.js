@@ -2,18 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './Tickers.css';
 import Cryptocurrency from './Cryptocurrency';
-	
 
-function getData(item) {   
-     return axios.get(`https://api.coinmarketcap.com/v1/ticker/${item}/`)
-     .then(response => response && response.data[0])
-     .catch(function (response) {
-        console.log(response);
-     })
 
-}
-
-class Favorites extends Component {
+class Tickers extends Component {
 
     constructor(props) {
         super(props);
@@ -59,23 +50,6 @@ class Favorites extends Component {
             })
             .catch(err => console.log(err));
     }
-
-    // getData()
-
-    fetchAllFavoritesData() {
-        var wanted = ["bitcoin", "ethereum", "ripple", "sumokoin", "pivx", "sonm", "nuls", "cardano"];
-        let dataState = {};
-        wanted.map(item => {
-            let promised_data = getData(item);
-            let data;
-            promised_data.then(response => { 
-                dataState = Object.assign(dataState, response);
-                console.log("resolved ", response);})
-                        .catch(function (response) {console.log("error resolving");})
-            
-        });
-        console.log("returned", dataState);
-    }
     
     componentDidMount() {
         this.fetchCryptocurrencyData();
@@ -103,10 +77,9 @@ class Favorites extends Component {
                     <ul className="tickers">{tickers[7]}</ul>
                     <ul className="tickers">{tickers[8]}</ul>
                 </div>
-                <p>Information updated every 10 seconds courtesy of coinmarketcap.com</p>
            </div>
         );
     }
 }
 
-export default Favorites;
+export default Tickers;

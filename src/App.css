@@ -1,31 +1,55 @@
 .App {
-        text-align: center;
-    }
-.App-header {
-    background-color: grey;
-    color: white;
-    font-size: .60rem;
-    margin: 0;
-    padding: 0.5rem;
-}
-
-.navbar {
-	text-align: center;
-	width:800px; margin:0 auto;
+    text-align: center;
+ 	background: Azure ;
  }
 
-.navbar-header {
-	background-color: white;
-	color: white;
-	font-size: .60rem;
-	margin: 2px	;
-	padding: 0.5rem;
-	position: absolute;
-	width: 200px;
-	height: 10px;
-	z-index: 15;
-	top: 140px;
-	left: 54%;
-	margin: -100px 0 0 -150px;
-	border: solid 2px green;
+@media only screen and (max-width: 500px) and (orientation: landscape) {
+    .App {
+       text-align: center;
+ 		background: Grey ;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+	.App-header {
+	    background: LightBlue;
+	    color: black;
+	    font-size: .60rem;
+	    margin: 0;
+	    padding: 0.5rem;
+	}
+}
+
+@media only screen and (min-width: 500px) {
+	.App-header {
+	    background: Grey;
+	    color: black;
+	    font-size: .60rem;
+	    margin: 0;
+	    padding: 0.5rem;
+	}
+}
+
+.container {
+  display: flex;
+  border: 2px;
+  justify-content: center;
+  background: radial-gradient(circle at right, Grey, #ffffff);
+}
+
+@media only screen and (max-width: 500px) {
+	.center {
+	  width: 250px;
+}
+}
+@media only screen and (min-width: 500px) {
+	.center {
+	  width: 800px;
+}
+}
+
+@media only screen and (orientation: landscape) {
+    .center {
+        width: 600px;
+    }
 }

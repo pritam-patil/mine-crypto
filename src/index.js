@@ -4,7 +4,8 @@ import App from './App';
 import './index.css';
 import {
   HashRouter
-} from 'react-router-dom';	
+} from 'react-router-dom';
+
 ReactDOM.render(
 	<HashRouter>
   		<App />

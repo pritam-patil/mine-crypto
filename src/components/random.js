@@ -5,7 +5,7 @@ import './Tickers.css';
 import Cryptocurrency from './Cryptocurrency';
 	
 
-class Favorites extends Component {
+class Random extends Component {
 
     constructor(props) {
         super(props);
@@ -26,7 +26,7 @@ class Favorites extends Component {
     
     componentDidMount() {
         this.fetchCryptocurrencyData();
-        this.interval = setInterval(() => this.fetchCryptocurrencyData(), 1000 * 1000);
+        this.interval = setInterval(() => this.fetchCryptocurrencyData(), 1500 * 1000);
     };
 
     render() {
@@ -49,10 +49,9 @@ class Favorites extends Component {
                     <ul className="tickers">{tickers[7]}</ul>
                     <ul className="tickers">{tickers[8]}</ul>
                 </div>
-                <p>Information updated every 10 seconds courtesy of coinmarketcap.com</p>
            </div>
         );
     }
 }
 
-export default Favorites;
+export default Random;
