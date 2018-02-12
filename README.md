@@ -6,3 +6,9 @@ The features include:
   - Past hour
   - Past 24 hours
   - Past week 
+
+Changelog:
+v.1 initial global cryptos with default view
+v.2 categorize, square icons, mobile view
+v.3 individual timers
+v.4 loader
