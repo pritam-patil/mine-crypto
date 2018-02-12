@@ -8,6 +8,7 @@ import PivX from './favourites/pivx';
 import Ripple from './favourites/ripple';
 import SONM from './favourites/sonm';
 import SUMOKoin from './favourites/sumokoin';
+import REFRESH_TIME from './constants';
 
 
 import './Tickers.css';
@@ -15,10 +16,6 @@ import './Tickers.css';
 class Favourites extends Component {
 	constructor(props) {
 		super(props);
-	}
-
-	componentDidMount() {
-		this.interval = setInterval(() => this.getMyFavourites(), 1000 * 1000);
 	}
 
 	getMyFavourites () {

@@ -22,6 +22,7 @@ class Bitcoin extends Component {
     }
     
      fetchCryptocurrencyData() {
+        console.log("called bitcoin");
         axios.get("https://api.coinmarketcap.com/v1/ticker/bitcoin/")
             .then(response => {
                 var result = response.data[0]; //.filter(currency => wanted.includes(currency.id));
@@ -33,7 +34,7 @@ class Bitcoin extends Component {
     
     componentWillMount() {
         this.fetchCryptocurrencyData();
-        // this.interval = setInterval(() => this.fetchCryptocurrencyData(), 1000 * 1000);
+        this.interval = setInterval(() => this.fetchCryptocurrencyData(), 10 * 1000);
     };
 
     render() {

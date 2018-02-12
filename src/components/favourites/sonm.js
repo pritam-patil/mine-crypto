@@ -32,7 +32,7 @@ class SONM extends Component {
 
     componentDidMount() {
         this.fetchCryptocurrencyData();
-        this.interval = setInterval(() => this.fetchCryptocurrencyData(), 1360 * 1000);
+        this.interval = setInterval(() => this.fetchCryptocurrencyData(), 10 * 1000);
     };
 
     render() {
