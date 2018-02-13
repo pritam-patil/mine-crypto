@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-
+import { HashRouter } from 'react-router-dom';
 import './App.css';
 
 import NavBar from './components/header';
@@ -13,6 +13,7 @@ class App extends Component {
 
   render() {
     return (
+    <HashRouter>
     <div className="App">
         <div className="App-header">
             <h2> Track your cryptocurrencies!</h2>
@@ -22,6 +23,7 @@ class App extends Component {
           <p align="center"> Information updated every 10 seconds courtesy of coinmarketcap.com </p>
         </div>
     </div>
+    </HashRouter>
     );
   }
 }

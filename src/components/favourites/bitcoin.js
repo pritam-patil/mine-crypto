@@ -38,7 +38,7 @@ class Bitcoin extends Component {
     };
 
     render() {
-        return <Cryptocurrency data={this.state.data} key={'bitcoin'} />
+        return <Cryptocurrency data={this.state.data} name={'Bitcoin'} symbol={'BTC'}/>
     }
 }
 

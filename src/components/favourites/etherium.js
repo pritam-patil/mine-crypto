@@ -37,7 +37,7 @@ class Ethereum extends Component {
     };
 
     render() {
-        return <Cryptocurrency data={this.state.data} key={'ethereum'} />;
+        return <Cryptocurrency data={this.state.data} name={'ethereum'} symbol={'ETH'} />;
     }
 }
 

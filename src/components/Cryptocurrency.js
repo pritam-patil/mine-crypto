@@ -10,18 +10,18 @@ class Cryptocurrency extends Component {
                 return +(Math.round(num + "e+2")  + "e-2");
             }
 
-            const price = price_usd ? roundToTwo(price_usd) : 0;
+            const numberWithCommas = (x) => {
+             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            const price = price_usd ? numberWithCommas(roundToTwo(price_usd * 64.27))  : 0;
             // const price = price_usd ? price_usd.toFixed(2) : 0;
-            const label = `${price} $`;
+            const label = `${price}`;
             return label;
     };
 
     showValue(price_usd=0) {
-        return(
-            <h1>
-                {this.getValueString(price_usd) }
-            </h1>
-        );
+        return this.getValueString(price_usd);
     }
 
     render() {
@@ -40,13 +40,20 @@ class Cryptocurrency extends Component {
             cryptoClass = 'stellar'; 
         }
 
+        const upOrDown = val => !!val && val > 0 ? "up" : "down";
+
+        const nameLabel = !!this.props.name ? this.props.name : name;
+        const symbolLabel = !!this.props.symbol ? this.props.symbol : symbol;
+
         return (
             <li className={"cryptocurrency " + cryptoClass}>
-                <p className="cryptocurrency-name">{name} ({symbol})</p>
-                {this.showValue(price_usd)}
-                <p>Last hour: {percent_change_1h}%</p>
-                <p>Since last day: {percent_change_24h}%</p>
-                <p>Past week: {percent_change_7d}%</p>
+                <p className="cryptocurrency-name">{nameLabel} ({symbolLabel})</p>
+                <h1> &#8377; {this.showValue(price_usd)} </h1>
+                <table className={"valueChanges"}>
+                 <tr> <td > Last hour </td> <td className={(upOrDown(percent_change_1h))} / > <td> {percent_change_1h}% </td></tr>
+                  <tr> <td> Since last day </td> <td className={(upOrDown(percent_change_24h))} /> <td> {percent_change_24h}% </td> <td /></tr>
+                   <tr> <td> Past week </td> <td className={(upOrDown(percent_change_7d))} /> <td> {percent_change_7d}% </td> <td /></tr>
+                 </table>
             </li>
         );
     }

@@ -37,7 +37,7 @@ class Cardano extends Component {
     };
 
     render() {
-        return <Cryptocurrency data={this.state.data} key={'cardano'} />
+        return <Cryptocurrency data={this.state.data} name={'Cardano'} symbol={'ADA'}/>
     }
 }
 
