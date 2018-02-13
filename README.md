@@ -12,3 +12,4 @@ v.1 initial global cryptos with default view
 v.2 categorize, square icons, mobile view
 v.3 individual timers
 v.4 loader
+v.5 give defaults to values, keep precision by using round method instead of toFixed

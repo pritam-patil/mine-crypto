@@ -4,6 +4,26 @@ import './Cryptocurrency.css';
 
 class Cryptocurrency extends Component {
 
+    getValueString (price_usd) {
+
+            function roundToTwo(num) {
+                return +(Math.round(num + "e+2")  + "e-2");
+            }
+
+            const price = price_usd ? roundToTwo(price_usd) : 0;
+            // const price = price_usd ? price_usd.toFixed(2) : 0;
+            const label = `${price} $`;
+            return label;
+    };
+
+    showValue(price_usd=0) {
+        return(
+            <h1>
+                {this.getValueString(price_usd) }
+            </h1>
+        );
+    }
+
     render() {
         var {
             id,
@@ -23,10 +43,10 @@ class Cryptocurrency extends Component {
         return (
             <li className={"cryptocurrency " + cryptoClass}>
                 <p className="cryptocurrency-name">{name} ({symbol})</p>
-                <h1>${ (+price_usd).toFixed(2) }</h1>
-                <p>{percent_change_1h}% 1hr</p>
-                <p>{percent_change_24h}% 24hrs</p>
-                <p>{percent_change_7d}% 7days</p>
+                {this.showValue(price_usd)}
+                <p>Last hour: {percent_change_1h}%</p>
+                <p>Since last day: {percent_change_24h}%</p>
+                <p>Past week: {percent_change_7d}%</p>
             </li>
         );
     }
