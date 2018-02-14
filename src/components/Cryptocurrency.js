@@ -1,8 +1,28 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import _ from 'lodash';
 import './Cryptocurrency.css';
 
 class Cryptocurrency extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: {}
+        };
+    }
+
+    fetchCurrencyRates() {
+        axios.get("http://api.fixer.io/latest?base=USD")
+            .then(response => {
+                var result = response.data && response.data.rates; //.filter(currency => wanted.includes(currency.id));
+                return this.setState({ data: result});
+            })
+            .catch(err => console.log(err));
+    }
+
+    componentWillMount() {
+        this.fetchCurrencyRates();
+    }
 
     getValueString (price_usd) {
 
@@ -14,7 +34,7 @@ class Cryptocurrency extends Component {
              return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             }
 
-            const price = price_usd ? numberWithCommas(roundToTwo(price_usd * 64.27))  : 0;
+            const price = price_usd ? numberWithCommas(roundToTwo(price_usd * this.state.data.INR))  : 0;
             // const price = price_usd ? price_usd.toFixed(2) : 0;
             const label = `${price}`;
             return label;
@@ -47,6 +67,7 @@ class Cryptocurrency extends Component {
 
         return (
             <li className={"cryptocurrency " + cryptoClass}>
+                <button name='show me' value='click me' onClick={this.showRates}/>
                 <p className="cryptocurrency-name">{nameLabel} ({symbolLabel})</p>
                 <h1> &#8377; {this.showValue(price_usd)} </h1>
                 <table className={"valueChanges"}>
