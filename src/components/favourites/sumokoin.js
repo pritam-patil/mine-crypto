@@ -36,7 +36,7 @@ class SUMOKoin extends Component {
     };
 
     render() {
-        return <Cryptocurrency data={this.state.data} key={'SUMOkoin'} />
+        return <Cryptocurrency data={this.state.data} name={'SUMOkoin'} symbol={'SUMO'}/>
     }
 }
 

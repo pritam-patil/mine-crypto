@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Cryptocurrency from '../Cryptocurrency';
+var authOptions = {
+    url: "https://api.coinmarketcap.com/v1/ticker/bitcoin/",
+    headers: {
+        'Authorization': 'Basic Y2xpZW50OnNlY3JldA==',
+        'Access-Control-Allow-Origin': '*'
+    }
+  }
 
 class Bitcoin extends Component {
 

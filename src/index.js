@@ -1,7 +1,7 @@
-import React, { createElement } from 'react';
-import { render } from 'react-dom';
-import App from './App';
-import './index.css';
+import React, { createElement } from 'react'
+import { render } from 'react-dom'
+import App from './App'
+import './index.css'
 
 // ReactDOM.render(
 // 	<HashRouter>
@@ -11,15 +11,11 @@ import './index.css';
 // );
 
 function startMethod() {
-	render(
-		createElement(App),
-  		document.getElementById('root')
-	);
+  render(createElement(App), document.getElementById('root'))
 }
 
-
 if (['loaded', 'complete', 'interactive'].includes(document.readyState)) {
-	startMethod();
+  startMethod()
 } else {
-	 window.onload = startMethod();
+  window.onload = startMethod()
 }

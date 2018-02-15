@@ -38,7 +38,7 @@ class PivX extends Component {
     };
 
     render() {
-        return <Cryptocurrency data={this.state.data} key={'pivx'} />
+        return <Cryptocurrency data={this.state.data} name={'pivx'} symbol={'pivx'} />
     }
 }
 

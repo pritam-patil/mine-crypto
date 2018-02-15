@@ -36,7 +36,7 @@ class Ripple extends Component {
     };
 
     render() {
-        return <Cryptocurrency data={this.state.data} key={'ripple'} />
+        return <Cryptocurrency data={this.state.data} name={'Ripple'} symbol={"ripple"}/>
     }
 }
 

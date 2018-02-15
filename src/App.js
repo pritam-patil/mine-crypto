@@ -1,31 +1,33 @@
-import React, { Component } from 'react';
-import $ from 'jquery';
-import { HashRouter } from 'react-router-dom';
-import './App.css';
+import React, { Component } from 'react'
+import $ from 'jquery'
+import { HashRouter } from 'react-router-dom'
+import './App.css'
 
-import NavBar from './components/header';
+import NavBar from './components/header'
 
 class App extends Component {
-
-  componentDidMount () {
-    $("#loading-home").remove();
+  componentDidMount() {
+    $('#loading-home').remove()
   }
 
   render() {
     return (
-    <HashRouter>
-    <div className="App">
-        <div className="App-header">
+      <HashRouter>
+        <div className="App">
+          <div className="App-header">
             <h2> Track your cryptocurrencies!</h2>
+          </div>
+          <NavBar />
+          <div id="footer">
+            <p align="center">
+              {' '}
+              Information updated every 10 seconds courtesy of coinmarketcap.com{' '}
+            </p>
+          </div>
         </div>
-        <NavBar />
-         <div id='footer'>
-          <p align="center"> Information updated every 10 seconds courtesy of coinmarketcap.com </p>
-        </div>
-    </div>
-    </HashRouter>
-    );
+      </HashRouter>
+    )
   }
 }
 
-export default App;
+export default App

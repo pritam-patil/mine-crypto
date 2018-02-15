@@ -11,7 +11,10 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "0.9.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "1.10.2",
+    "prettier-eslint": "^8.8.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

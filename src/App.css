@@ -1,33 +1,33 @@
 .App {
-    text-align: center;
- 	background: Azure ;
- }
+  text-align: center;
+  background: Azure;
+}
 
 @media only screen and (max-width: 500px) and (orientation: landscape) {
-    .App {
-       text-align: center;
- 		background: Grey ;
-    }
+  .App {
+    text-align: center;
+    background: Grey;
+  }
 }
 
 @media only screen and (max-width: 500px) {
-	.App-header {
-	    background: LightBlue;
-	    color: black;
-	    font-size: .60rem;
-	    margin: 0;
-	    padding: 0.5rem;
-	}
+  .App-header {
+    background: LightBlue;
+    color: black;
+    font-size: 0.6rem;
+    margin: 0;
+    padding: 0.5rem;
+  }
 }
 
 @media only screen and (min-width: 500px) {
-	.App-header {
-	    background: Grey;
-	    color: black;
-	    font-size: .60rem;
-	    margin: 0;
-	    padding: 0.5rem;
-	}
+  .App-header {
+    background: Grey;
+    color: black;
+    font-size: 0.6rem;
+    margin: 0;
+    padding: 0.5rem;
+  }
 }
 
 .container {
@@ -38,18 +38,18 @@
 }
 
 @media only screen and (max-width: 500px) {
-	.center {
-	  width: 250px;
-}
+  .center {
+    width: 250px;
+  }
 }
 @media only screen and (min-width: 500px) {
-	.center {
-	  width: 800px;
-}
+  .center {
+    width: 800px;
+  }
 }
 
 @media only screen and (orientation: landscape) {
-    .center {
-        width: 600px;
-    }
+  .center {
+    width: 600px;
+  }
 }
