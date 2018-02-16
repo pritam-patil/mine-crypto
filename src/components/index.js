@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import Bitcoin from './favourites/bitcoin'
 import Cardano from './favourites/cardano'
@@ -8,16 +8,12 @@ import PivX from './favourites/pivx'
 import Ripple from './favourites/ripple'
 import SONM from './favourites/sonm'
 import SUMOKoin from './favourites/sumokoin'
-import REFRESH_TIME from './constants'
+import { REFRESH_TIME } from './constants'
 
 import './Tickers.css'
 
-class Favourites extends Component {
-  constructor(props) {
-    super(props)
-  }
+const Favourites = () => {
 
-  getMyFavourites() {
     return (
       <div>
         <div className="tickers-container">
@@ -53,12 +49,7 @@ class Favourites extends Component {
           </div>
         </div>
       </div>
-    )
-  }
-
-  render() {
-    return this.getMyFavourites()
-  }
+    );
 }
 
 export default Favourites

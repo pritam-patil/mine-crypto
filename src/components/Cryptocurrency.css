@@ -85,7 +85,7 @@
   padding: 50px;
 }
 
-tr:hover {
+#change:hover {
   background-color: #f5f5f5;
   font-weight: bold;
 }

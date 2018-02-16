@@ -24,7 +24,7 @@ class Ethereum extends Component {
      fetchCryptocurrencyData() {
         axios.get("https://api.coinmarketcap.com/v1/ticker/ethereum/")
             .then(response => {
-                var wanted = ["bitcoin", "ethereum", "ripple", "sumokoin", "pivx", "sonm", "nuls", "cardano"];
+                // var wanted = ["bitcoin", "ethereum", "ripple", "sumokoin", "pivx", "sonm", "nuls", "cardano"];
                 var result = response.data[0]; //.filter(currency => wanted.includes(currency.id));
                 this.setState({ data: result});
             })

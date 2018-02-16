@@ -25,7 +25,7 @@ class NewCryptos extends Component {
 
   componentDidMount() {
     this.fetchCryptocurrencyData()
-    this.interval = setInterval(() => this.fetchCryptocurrencyData(), 10 * 1000)
+    this.interval = setInterval(() => this.fetchCryptocurrencyData(), 20 * 1000)
   }
 
   render() {

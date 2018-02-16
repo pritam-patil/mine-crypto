@@ -26,6 +26,10 @@ class Cryptocurrency extends Component {
   }
 
   getValueString(price_usd) {
+    if (!price_usd) {
+        return 0;
+    }
+
     function roundToTwo(num) {
       return +(Math.round(num + 'e+2') + 'e-2')
     }
@@ -48,7 +52,6 @@ class Cryptocurrency extends Component {
 
   render() {
     var {
-      id,
       name,
       symbol,
       price_usd,
@@ -74,17 +77,17 @@ class Cryptocurrency extends Component {
         </p>
         <h1> &#8377; {this.showValue(price_usd)} </h1>
         <table className={'valueChanges'}>
-          <tr>
+          <tr id='change'>
             <td>Last hour</td>
             <td className={upOrDown(percent_change_1h)} />
             <td> {percent_change_1h}% </td>
           </tr>
-          <tr>
+          <tr id='change'>
             <td>Since last day</td>
             <td className={upOrDown(percent_change_24h)} />
             <td> {percent_change_24h}% </td>
           </tr>
-          <tr>
+          <tr id='change'>
             <td>Past week</td>
             <td className={upOrDown(percent_change_7d)} />
             <td> {percent_change_7d}%</td>

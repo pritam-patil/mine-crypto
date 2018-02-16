@@ -16,3 +16,4 @@ v.5 give defaults to values, keep precision by using round method instead of toF
 v.6 convert dollar to INR with default c, add tables for value changes, add custom arrow indicators, default names to few favorites, load component when document is ready
 v.7 currency conversion api added
 v.8 cleanup, add csp, prettier
+v.9 update csp, update refresh intervals for random/new/classic views
