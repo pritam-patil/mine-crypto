@@ -7,7 +7,10 @@ class Cryptocurrency extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: {},
+      data: {
+        EUR: 0,
+        INR: 0
+      },
     }
   }
 
@@ -39,7 +42,7 @@ class Cryptocurrency extends Component {
     }
 
     const price = price_usd
-      ? numberWithCommas(roundToTwo(price_usd * this.state.data.INR))
+      ? numberWithCommas(price_usd ? roundToTwo(price_usd * this.state.data.INR) : 0)
       : 0
     // const price = price_usd ? price_usd.toFixed(2) : 0;
     const label = `${price}`

@@ -17,3 +17,4 @@ v.6 convert dollar to INR with default c, add tables for value changes, add cust
 v.7 currency conversion api added
 v.8 cleanup, add csp, prettier
 v.9 update csp, update refresh intervals for random/new/classic views
+v1  update csp, mobile view crypto size change, add defaults for conversion api results
