@@ -1,7 +1,20 @@
-import React, { Component } from 'react'
-import axios from 'axios'
-import _ from 'lodash'
-import './Cryptocurrency.css'
+import React, { Component } from 'react';
+import axios from 'axios';
+import { PropagateLoader } from 'react-spinners';
+import _ from 'lodash';
+import './Cryptocurrency.css';
+
+
+const Spinner = props => {
+    return (
+        <div className="tab-spinner">
+            <PropagateLoader
+                color={'#123abc'}
+                loading={props.isLoading}
+            />
+        </div>
+    );
+}
 
 class Cryptocurrency extends Component {
   constructor(props) {
@@ -11,6 +24,7 @@ class Cryptocurrency extends Component {
         EUR: 0,
         INR: 0
       },
+      isLoading: true
     }
   }
 
@@ -19,7 +33,7 @@ class Cryptocurrency extends Component {
       .get('http://api.fixer.io/latest?base=USD')
       .then(response => {
         var result = response.data && response.data.rates //.filter(currency => wanted.includes(currency.id));
-        return this.setState({ data: result })
+        return this.setState({ data: result, isLoading: false })
       })
       .catch(err => console.log(err))
   }
@@ -62,6 +76,8 @@ class Cryptocurrency extends Component {
       percent_change_24h,
       percent_change_7d,
     } = this.props.data
+
+    const { isLoading } = this.state;
     const defined = ['bitcoin', 'ripple', 'ethereum', 'nuls']
     let cryptoClass = defined[_.random(defined.length) - 1]
     if (!cryptoClass) {
@@ -74,29 +90,33 @@ class Cryptocurrency extends Component {
     const symbolLabel = !!this.props.symbol ? this.props.symbol : symbol
 
     return (
-      <li className={'cryptocurrency ' + cryptoClass}>
-        <p className="cryptocurrency-name">
-          {nameLabel} [{symbolLabel}]
-        </p>
-        <h1> &#8377; {this.showValue(price_usd)} </h1>
-        <table className={'valueChanges'}>
-          <tr id='change'>
-            <td>Last hour</td>
-            <td className={upOrDown(percent_change_1h)} />
-            <td> {percent_change_1h}% </td>
-          </tr>
-          <tr id='change'>
-            <td>Since last day</td>
-            <td className={upOrDown(percent_change_24h)} />
-            <td> {percent_change_24h}% </td>
-          </tr>
-          <tr id='change'>
-            <td>Past week</td>
-            <td className={upOrDown(percent_change_7d)} />
-            <td> {percent_change_7d}%</td>
-          </tr>
-        </table>
-      </li>
+      <div>
+          {isLoading && <Spinner isLoading={isLoading}/>}
+          {!isLoading && (<li className={'cryptocurrency ' + cryptoClass}>
+            <p className="cryptocurrency-name">
+              {nameLabel} [{symbolLabel}]
+            </p>
+            <h1> &#8377; {this.showValue(price_usd)} </h1>
+            <table className={'valueChanges'}>
+              <tr id='change'>
+                <td>Last hour</td>
+                <td className={upOrDown(percent_change_1h)} />
+                <td> {percent_change_1h}% </td>
+              </tr>
+              <tr id='change'>
+                <td>Since last day</td>
+                <td className={upOrDown(percent_change_24h)} />
+                <td> {percent_change_24h}% </td>
+              </tr>
+              <tr id='change'>
+                <td>Past week</td>
+                <td className={upOrDown(percent_change_7d)} />
+                <td> {percent_change_7d}%</td>
+              </tr>
+            </table>
+          </li>
+          )}
+        </div>
     )
   }
 }
