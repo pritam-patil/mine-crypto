@@ -19,3 +19,4 @@ Changelog:
 	v0.9 update csp, update refresh intervals for random/new/classic views <br/>
 	v1.0 update csp, mobile view crypto size change, add defaults for conversion api results <br/>
 	v2.0 add react loaders <br/>
+	v2.1 update favourites
