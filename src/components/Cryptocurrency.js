@@ -98,6 +98,7 @@ class Cryptocurrency extends Component {
             </p>
             <h1> &#8377; {this.showValue(price_usd)} </h1>
             <table className={'valueChanges'}>
+              <tbody>
               <tr id='change'>
                 <td>Last hour</td>
                 <td className={upOrDown(percent_change_1h)} />
@@ -113,6 +114,7 @@ class Cryptocurrency extends Component {
                 <td className={upOrDown(percent_change_7d)} />
                 <td> {percent_change_7d}%</td>
               </tr>
+              </tbody>
             </table>
           </li>
           )}

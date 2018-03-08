@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import _ from 'lodash'
-import { ClipLoader, RingLoader, PropagateLoader } from 'react-spinners';
+import { PropagateLoader } from 'react-spinners';
 import './Tickers.css'
 import Cryptocurrency from './Cryptocurrency'
 
