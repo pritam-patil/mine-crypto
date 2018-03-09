@@ -17,7 +17,7 @@ const Spinner = props => {
     );
 }
 
-class Cryptocurrency extends Component {
+class Koin extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -83,7 +83,7 @@ class Cryptocurrency extends Component {
       cryptoClass = 'stellar'
     }
 
-    const upOrDown = val => (!!val && val > 0 ? 'up' : 'down');
+    const upOrDown = (val, current) => (!!val && val > current ? 'up' : 'down');
     const currencyValue = format ? numberWithCommas(price_usd) : this.showValue(price_usd);
 
     const nameLabel = !!this.props.name ? this.props.name : name
@@ -100,19 +100,19 @@ class Cryptocurrency extends Component {
             <table className={'valueChanges'}>
               <tbody>
               <tr id='change'>
-                <td>Last hour</td>
+                <td>24HR Vol: </td>
                 <td className={upOrDown(percent_change_1h)} />
-                <td> {percent_change_1h}% </td>
+                <td> {percent_change_1h} </td>
               </tr>
               <tr id='change'>
-                <td>Since last day</td>
-                <td className={upOrDown(percent_change_24h)} />
-                <td> {percent_change_24h}% </td>
+                <td>24HR max: </td>
+                <td className={upOrDown(percent_change_24h, price_usd)} />
+                <td> {percent_change_24h} </td>
               </tr>
               <tr id='change'>
-                <td>Past week</td>
-                <td className={upOrDown(percent_change_7d)} />
-                <td> {percent_change_7d}%</td>
+                <td>24HR min: </td>
+                <td className={upOrDown(percent_change_7d, price_usd)} />
+                <td> {percent_change_7d} </td>
               </tr>
               </tbody>
             </table>
@@ -123,4 +123,4 @@ class Cryptocurrency extends Component {
   }
 }
 
-export default Cryptocurrency
+export default Koin;

@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import '../App.css'
-import Favourites from './index'
-import New from './new-cryptos'
-import Random from './random'
-import Tickers from './Tickers'
+import Favourites from './index';
+import Koinex from './koinex';
+import New from './new-cryptos';
+import Random from './random';
+import Tickers from './Tickers';
 import { HashRouter, Switch, Route, Link } from 'react-router-dom'
 
 const Header = () => (
@@ -24,6 +25,9 @@ const Header = () => (
             <td>
               <Link to="/new">New</Link>
             </td>
+            <td>
+              <Link to="/koinex"> Koin </Link>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -38,6 +42,7 @@ const Main = () => (
       <Route path="/random" component={Random} />
       <Route path="/classic" component={Tickers} />
       <Route path="/new" component={New} />
+      <Route path="/koinex" component={Koinex} />
       <Route path="/" component={Favourites} />
     </Switch>
   </main>
